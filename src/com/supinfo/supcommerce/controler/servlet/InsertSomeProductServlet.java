@@ -98,7 +98,7 @@ public class InsertSomeProductServlet extends HttpServlet {
 								+ "<ul class=\"nav navbar-nav\">"
 									+ "<li><a href=\"/SupCommerce-2-2\"><span class=\"glyphicon glyphicon-home\"></span>&nbsp; Home</a></li>"
 									+ "<li><a href=\"/SupCommerce-2-2/listProduct\"><span class=\"glyphicon glyphicon-list\"></span>&nbsp; Products List</a></li>"
-									+ "<li class=\"active\"><a href=\"/SupCommerce-2-2/basicInsert\"><span class=\"glyphicon glyphicon-random\"></span>&nbsp; Random Product</a></li>"
+									+ "<li class=\"active\"><a href=\"/SupCommerce-2-2/auth/basicInsert\"><span class=\"glyphicon glyphicon-random\"></span>&nbsp; Random Product</a></li>"
 								+ "</ul>"
 							+ "</nav>"
 						+ "</div>"

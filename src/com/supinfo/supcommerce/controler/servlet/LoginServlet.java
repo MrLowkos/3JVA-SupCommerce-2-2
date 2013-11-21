@@ -2,12 +2,10 @@ package com.supinfo.supcommerce.controler.servlet;
 
 import java.io.IOException;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class LoginServlet
@@ -21,7 +19,7 @@ import javax.servlet.http.HttpSession;
 public class LoginServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private static final String PARAM_USERNAME_POST = "username";
-    private static final String LIST_PRODUCT_SERVLET	= "listProduct";
+    private static final String LIST_PRODUCT_SERVLET = "/listProduct";
        
     /**
      * @see HttpServlet#HttpServlet()
@@ -42,17 +40,14 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		// Retrieve 
+		// Retrieve form parameter
 		final String usernameParam = request.getParameter(PARAM_USERNAME_POST);
 		
+		// Insert it in session attribute
 		request.getSession().setAttribute(PARAM_USERNAME_POST, usernameParam);
 		
-		RequestDispatcher rd = request.getRequestDispatcher("/listProduct");
-		rd.forward(request, response);
-		// Or
-		// this.getServletContext().getRequestDispatcher("/listProduct").forward(request, response);
-		// Or
-		// request.getRequestDispatcher("/listProduct").forward(request, response);
+		//Redirect to products list
+		response.sendRedirect(request.getServletContext().getContextPath() + LIST_PRODUCT_SERVLET);
 	}
 
 }

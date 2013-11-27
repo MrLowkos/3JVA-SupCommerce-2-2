@@ -20,7 +20,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ListProductServlet</servlet-name>
-    <url-pattern>/</url-pattern>
     <url-pattern>/listProduct</url-pattern>
   </servlet-mapping>
   
